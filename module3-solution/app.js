@@ -38,6 +38,7 @@
 
 		narrowIt.removeItem = function (itemIndex) {
 			console.log("'this' is:	", this);
+			console.log("removeItem() for itemIndex =	", itemIndex);
 			narrowIt.found.splice( itemIndex, 1 );
 		};
 	
