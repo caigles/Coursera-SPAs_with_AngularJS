@@ -1,0 +1,32 @@
+<div class="container" ng-controller="UserInfoController as ctrl">
+    <div id="not-registered" ng-if="!ctrl.isRegistered">
+      <h3>Not Signed Up Yet. <a ui-sref="public.usersignup"> Sign up Now!</a></h3>
+    </div>
+
+    <div ng-if="ctrl.isRegistered">
+      <div id="user-info">
+        <h3>User Information:</h3>
+        <br>
+        <div>
+          Name: {{ctrl.user.firstName }} {{ctrl.user.lastName}}
+        </div>
+        <div>
+          Email: {{ctrl.user.email}}
+        </div>
+        <div>
+          Phone Number: {{ctrl.user.phone}}
+        </div>
+      </div>
+
+      <br>
+
+      <div>
+        <h3>Favourite Dish</h3>
+        <br>
+        <br>
+        <menu-item ng-repeat="menuItem in ctrl.menuItems"
+                   menu-item="menuItem">
+        </menu-item>
+      </div>
+    </div>
+  </div>
